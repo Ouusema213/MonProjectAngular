@@ -1,0 +1,35 @@
+<div class="container">
+    <div>
+        <h2>Ajouter un Jeux :</h2>
+    </div>
+    <form>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label hidden >ID Jeux</label>
+            <input type="text" hidden [(ngModel)]="newJeux.id" name="id" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Nom Jeux</label>
+            <input type="text" [(ngModel)]="newJeux.nom" name="nom" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>Prix Jeux</label>
+            <input type="number" [(ngModel)]="newJeux.prix" name="prix" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Date création</label>
+            <input type="date" [(ngModel)]="newJeux.date" name="date" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Categorie</label>
+            <select class="form-control form-control-lg" id="idCat" name="idCat" [(ngModel)]="newIdCat">
+                <option *ngFor="let cat of categories" [value]="cat.id">
+                    {{cat.nomC}}
+                </option>
+            </select>
+        </div> 
+        <div class="mt-2">
+            <button type="submit" (click)="addJeux()" class="btn btn-success">Ajouter</button>
+        </div>
+
+    </form>
+</div>
